@@ -1,6 +1,6 @@
 # 🗺️ ReconMapper - Electron Edition
 
-![Versão](https://img.shields.io/badge/version-5.0-blue.svg)
+![Versão](https://img.shields.io/badge/version-3.0-blue.svg)
 ![Licença](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-ativo-brightgreen.svg)
 
