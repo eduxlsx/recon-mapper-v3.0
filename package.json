@@ -1,0 +1,26 @@
+{
+  "name": "recon-mapper.pro",
+  "version": "3.0.0",
+  "description": "AI-Powered Web Reconnaissance & Attack Surface Discovery",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "recon",
+    "security",
+    "crawler",
+    "ai"
+  ],
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.5",
+    "electron": "^31.0.2",
+    "electron-pdf-window": "^1.0.12"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ReconMapper Pro</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./assets/logo.svg" alt="logo" class="logo">
+            <h1>ReconMapper</h1>
+        </header>
+        <p class="subtitle">Advanced Asynchronous Web Reconnaissance & Attack Surface Discovery</p>
+        
+        <div class="config-panel">
+            <div class="input-group">
+                <label for="target-input">Alvo</label>
+                <input id="target-input" placeholder="example.com" type="text"/>
+            </div>
+            <div class="input-group">
+                <label for="threads-input">Workers</label>
+                <input id="threads-input" type="number" value="20" min="1" max="100"/>
+            </div>
+            <div class="input-group">
+                <label for="timeout-input">Timeout (s)</label>
+                <input id="timeout-input" type="number" value="10" min="1"/>
+            </div>
+            <div class="input-group">
+                <label for="depth-input">Profundidade</label>
+                <input id="depth-input" type="number" value="2" min="1"/>
+            </div>
+            <div class="input-group-checkbox">
+                <input id="wayback-checkbox" type="checkbox"/>
+                <label for="wayback-checkbox">Usar Wayback Machine</label>
+            </div>
+            <div class="input-group-button">
+                <button id="scan-button">▶ Iniciar Scan</button>
+                <button id="stop-button" class="stop-button">■ Parar Scan</button> </div>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="logs">Logs</button>
+                <button class="tab-button" data-tab="results">Resultados</button>
+                <button class="tab-button" data-tab="analytics">Gráficos & Análise</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="logs-pane"><pre id="logs"></pre></div>
+                <div class="tab-pane" id="results-pane"><div id="results"></div></div>
+                <div class="tab-pane" id="analytics-pane">
+                    <div class="analytics-grid">
+                        <div class="stat-card"><h3>Tempo de Scan</h3><p id="stat-time">-- s</p></div>
+                        <div class="stat-card"><h3>Requisições Feitas</h3><p id="stat-requests">--</p></div>
+                        <div class="stat-card"><h3>Requisições/Seg</h3><p id="stat-rps">--</p></div>
+                        <div class="stat-card"><h3>Falhas</h3><p id="stat-fails">--</p></div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-container"><h3>Distribuição de Recursos</h3><canvas id="distribution-chart"></canvas></div>
+                        <div class="chart-container"><h3>Top 5 Extensões de Arquivo</h3><canvas id="extensions-chart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <label id="status-label">Pronto.</label>
+            <button id="pdf-button" disabled>Baixar Relatório PDF</button>
+        </footer>
+    </div>
+
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <script type="module" src="./renderer.js"></script>
+</body>
+</html>
