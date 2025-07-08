@@ -55,7 +55,7 @@ Para rodar este projeto, você precisará ter instalado:
     ```
 2.  Navegue até a pasta do projeto:
     ```bash
-    cd reconmapper-electron
+    cd recon-mapper-v3.0
     ```
 3.  Instale todas as dependências:
     ```bash
