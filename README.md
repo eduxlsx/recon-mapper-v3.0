@@ -6,9 +6,6 @@
 
 Uma ferramenta de Reconhecimento Web e Descoberta de Superfície de Ataque com interface gráfica moderna, construída com Electron e Node.js.
 
-![Screenshot da Aplicação](https://i.imgur.com/gK49D3H.png)
-*A interface principal do ReconMapper em ação.*
-
 ## 🎯 Visão Geral
 
 O ReconMapper é um robô de reconhecimento web de alta performance que fornece uma descoberta compreensiva da superfície de ataque para profissionais de segurança, pent testers e caçadores de recompensas de bugs (bug bounty).
