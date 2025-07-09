@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Referências aos elementos da tela ---
+  
   const targetInput = document.getElementById("target-input");
   const threadsInput = document.getElementById("threads-input");
   const timeoutInput = document.getElementById("timeout-input");
@@ -9,16 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const pdfButton = document.getElementById("pdf-button");
   const logsDiv = document.getElementById("logs");
   const resultsDiv = document.getElementById("results");
-  const statusLabel = document.getElementById("status-label");
-
-  // --- Variáveis de estado ---
+  const statusLabel = document.getElementById("status-
+    
   let lastScanResult = null;
   let distributionChart = null;
   let extensionsChart = null;
   let resultBuffer = [];
   let logBuffer = [];
 
-  // --- Lógica de atualização da UI em intervalos ---
   setInterval(() => {
     if (logBuffer.length > 0) {
       logsDiv.innerText += logBuffer.join("\n") + "\n";
@@ -50,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 250);
 
-  // --- Lógica para alternar abas ---
   document.querySelectorAll(".tab-button").forEach((button) => {
     button.addEventListener("click", () => {
       document
@@ -66,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Lógica do Botão de Scan ---
   scanButton.addEventListener("click", () => {
     const options = {
       target: targetInput.value,
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Limpa a UI
     logsDiv.innerText = "";
     resultsDiv.innerHTML = "";
     lastScanResult = null;
@@ -153,14 +148,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- LÓGICA DE RENDERIZAÇÃO DE GRÁFICOS (CORRIGIDA E MAIS ROBUSTA) ---
   function renderAnalytics(data, stats) {
     if (!data || !stats) {
       console.error("Dados de análise inválidos recebidos.");
       return;
     }
 
-    // Atualiza as métricas de desempenho
     document.getElementById(
       "stat-time"
     ).innerText = `${stats.durationInSeconds.toFixed(2)} s`;
@@ -177,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "#56b6c2",
     ];
 
-    // Gráfico 1: Distribuição de Recursos
     const distCtx = document
       .getElementById("distribution-chart")
       .getContext("2d");
@@ -199,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Gráfico 2: Extensões de Arquivo
     const extCtx = document.getElementById("extensions-chart").getContext("2d");
     if (extensionsChart) extensionsChart.destroy();
 
