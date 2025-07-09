@@ -69,20 +69,19 @@ button {
 button:hover { background-color: #82c3f9; }
 button:disabled { background-color: #5c6370; cursor: not-allowed; }
 
-/* === ÁREA CORRIGIDA === */
 .tab-container {
     display: flex;
     flex-direction: column;
     background-color: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    flex-grow: 1; /* Faz o container de abas ocupar o espaço vertical restante */
-    min-height: 0; /* Essencial para o flexbox em layouts verticais */
+    flex-grow: 1;
+    min-height: 0;
 }
 .tab-buttons {
     display: flex;
     border-bottom: 1px solid var(--border-color);
-    flex-shrink: 0; /* Impede que os botões encolham */
+    flex-shrink: 0;
 }
 .tab-button {
     padding: 10px 20px;
@@ -100,30 +99,27 @@ button:disabled { background-color: #5c6370; cursor: not-allowed; }
 .tab-content {
     padding: 15px;
     flex-grow: 1;
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    overflow-y: auto;
     min-height: 0;
 }
 .tab-pane {
     display: none;
-    height: 100%; /* Ocupa toda a altura do pai (.tab-content) */
+    height: 100%;
     width: 100%;
 }
 .tab-pane.active {
-    display: flex; /* Usamos flex aqui também para o conteúdo interno */
+    display: flex;
     flex-direction: column;
 }
-/* O seletor #logs, #results foi removido pois estava causando o problema. */
-/* Os elementos internos agora se ajustarão automaticamente. */
+
 pre#logs, div#results {
-    flex-grow: 1; /* Faz a área de texto/resultados ocupar o espaço */
-    overflow-y: auto; /* Adiciona scroll interno se necessário */
-    background-color: #2c3440; /* Um fundo levemente diferente para destaque */
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #2c3440;
     border-radius: 4px;
     padding: 10px;
 }
-/* === FIM DA ÁREA CORRIGIDA === */
 
-/* Estilos para Analytics */
 .analytics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -183,10 +179,10 @@ pre#logs, div#results {
     position: relative;
     height: 300px;
 }
-/* Adicionar ao final do style.css */
+
 #stop-button {
-    display: none; /* Começa escondido */
-    background-color: #e06c75; /* Cor vermelha para perigo/parada */
+    display: none;
+    background-color: #e06c75;
     color: #fff;
 }
 #stop-button:hover {
